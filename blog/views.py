@@ -271,14 +271,32 @@ def post_model_create_view(request):
         return render(request, template, context)
 
 
-class BlogUpdateView(SuccessMessageMixin, UpdateView):
-    model = Post
-    form_class = PostModelForm
-    template_name = "A1/form.html"
+# def post_model_update_view(request, user_id):
+#     obj = get_object_or_404(Post, id=user_id)
+#     form = PostModelForm(request.POST or None, instance=obj)
+#     context = {
+#         #"object":obj,
+#         "form":form
+#     }
+#     if form.is_valid():
+#         obj = form.save(commit=False)
+#         print(obj.title)
+#         obj.save()
+#         messages.success(request, "updated blog")
+#         context={
+#             #"form":PostModelForm()
+#             "form":PostModelForm()#request.POST or None
+#         }
+#         return HttpResponseRedirect("/dashboard")
+
+#     template = "A1/update-view.html"
+#     return render(request, template, context)
 
 
-class BlogDetail(SuccessMessageMixin, DetailView):
-    model = Post
+
+
+# class BlogDetail(SuccessMessageMixin, DetailView):
+#     model = Post
 
 
 def post_model_update_view(request, user_id):
@@ -297,7 +315,7 @@ def post_model_update_view(request, user_id):
             #"form":PostModelForm()
             "form":PostModelForm()#request.POST or None
         }
-        return HttpResponseRedirect("/blog/{num}".format(num=obj.id))
+        return HttpResponseRedirect("/dashboard")
 
     template = "update-view.html"
     return render(request, template, context)
