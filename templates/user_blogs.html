@@ -1,7 +1,148 @@
-<form action="/list" >
-  <input type="text" name="q" placeholder="SEARCH">
-</form>
-{% for obj in qs %}
-<li>
-     <a href='{% url "blog:list" obj.slug %}'>{{obj}}</a></li>
-    {% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html style="100%">
+<head>
+	<title>BlogSpot - Users</title>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Noto+Serif|Roboto:400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!--Minified javascript file for ScrollReveal-->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!--jQuery for smooth scrolling-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://s3.amazonaws.com/myadvobuck/static/libs/typed.min.js"></script>
+    <style>
+    body {
+    	height: 100%;
+		background: #BBD2C5;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+
+    #container {
+    	font-family: roboto;
+		width: 450px;
+		margin: 130px auto 0 auto;
+		background-color: #f7f7f7;
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	}
+
+	h1
+	{
+		font-size: 30px;
+		background-color: #2980b9;
+		color: #fff;
+		font-weight: normal;
+		margin: 0;
+		padding: 15px 40px;
+		text-transform: uppercase;
+	}	
+
+	.userlist
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.userlist li {
+		height: 40px;
+		color: #666;
+		line-height: 40px;
+		padding: 5px 0 10px 40px;
+	}
+
+	.userlist li:nth-child(odd)
+	{
+		background-color: #fff;
+	}
+
+	.userlist li a {
+		color: black;
+	}
+
+	.userlist li a:hover {
+		color: green;
+	}
+
+	input
+	{
+		width: 100%;
+		padding: 10px 10px 10px 35px;
+		font-size: 18px;
+		box-sizing: border-box;
+		background-color: #f7f7f7;
+		color: #2980b9;
+		border: 3px solid rgba(0, 0, 0, 0);
+	}	
+
+	input:focus
+	{
+		background-color: #fff;
+		border: 3px solid #2980b9;
+		outline: none;
+	}
+    </style>
+</head>
+<body>
+   <div style="min-height: 100%; margin-bottom: -120px;">
+	<nav class="navbar navbar-expand-sm navbar-light fixed-top" style="box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);">
+        <div class="container">
+        <a class="navbar-brand" href="{% url 'blog:home' %}"><span class="logo">BlogSpot</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="{% url 'blog:home' %}">Home</a>
+            </li>
+           <!--  <li class="nav-item">
+              <a class="nav-link text-dark" href="#info1">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#faq">FAQ's</a>
+            </li>
+            --> 
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'blog:register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'blog:login' %}">Login</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+	</nav>
+	<div id="container">
+		<h1>USERS</i></h1>
+		<form action="/list" >
+  			<input type="text" class="" name="q" placeholder="Search User">
+		</form>
+		<ul class="userlist">
+			{% for obj in qs %}
+				<li>
+     				<a href='{% url "blog:list" obj.slug %}'><h4>{{obj}}</h4></a>
+ 				</li>
+			{% endfor %}
+		</ul>
+    </div>
+  <div style="height: 120px"></div>
+ </div> 
+
+ <footer class="footer-basic-centered py-4" style="height: 120px">
+
+			<p class="footer-company-motto">BlogSpot.</p>
+			<br>
+			<p class="footer-company-name">BlogSpot &copy; 2018</p>
+
+ </footer>
+
+
+</body>
+</html>
