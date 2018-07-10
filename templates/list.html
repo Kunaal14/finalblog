@@ -1,9 +1,29 @@
-{% if object_list %}
-		{% for obj in object_list %}
-				{{ obj.title }}
-		<br>
-		{{obj.content}}<hr/>
-		{% endfor %}
-{% else %}
-		no blog yet
-{% endif %}
+{% extends "base.html" %}
+
+{% block title %} BlogSpot - Login {% endblock %}
+
+{% block content %}
+
+<div class="my-5">
+	<div class="container">
+	{% if object_list %}
+			{% for obj in object_list %}
+			<h1 id="viewhead" style="font-family: 'Noto Serif', serif; font-size: 50px;">{{ obj.title }}</h1>
+			<br>
+			<p id="viewbody" style="font-family: 'Roboto', sans-serif;">
+				<span class="px-2"></span>{{obj.content}}
+			</p>	
+			<hr>
+			{% endfor %}
+	{% else %}
+			<h5>No blog yet</h5>
+	{% endif %}
+	</div>
+</div>
+<footer class="footer-basic-centered py-4" style="height: 80px">
+
+	<p class="footer-company-name">BlogSpot &copy; 2018</p>
+
+</footer>
+
+{% endblock %}

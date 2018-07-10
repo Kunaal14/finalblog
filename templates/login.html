@@ -13,15 +13,17 @@
 
 {% else %}
 <form action='/logout/' method='POST' name='form'>{% csrf_token %}
-		</form>
+    </form>
 <script>
-	window.onload = function(){
-		document.forms['form'].submit();
-	}
+  window.onload = function(){
+    document.forms['form'].submit();
+  }
 </script>
-{% endif %}	
+{% endif %} 
 
  -->
+
+{% block title %} BlogSpot - Login {% endblock %}
 
 {% block content %}
 <!--NavBar-->
@@ -55,38 +57,38 @@
 </nav>
 <div style="background: #f5f6fa; height: 100%; width:100%; padding-top: 100px;">
   <div class="container">
-  	<div class="row">	
-  	  <div class="col-lg-3"></div>
-  	  <div class="col-lg-6">
-	   <div class="card border" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-	    <div class="card-body">
-	    	<h2 class="card-title">Login</h2>
-	    	<br>
-	    	<br>
-	    	<form method=POST action=''>
-				{% csrf_token %}
-				{{form.as_p}}
-				<br>
-				<input type="submit" class="btn btn-success btn-block" name="Login" value="Login">
-			</form>	
-	  	</div>
-	   </div>
-	  </div>
-	  <div class="col-lg-3"></div>
-  	</div>
+    <div class="row"> 
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+     <div class="card border" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <div class="card-body">
+        <h2 class="card-title">Login</h2>
+        <br>
+        <br>
+        <form method=POST action=''>
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <input type="submit" class="btn btn-success btn-block" name="Login" value="Login">
+      </form> 
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3"></div>
+    </div>
   </div>
-  <footer class="footer-basic-centered" style="position: absolute; bottom: 0; padding: 15px;">
+  <footer class="footer-basic-centered" style="bottom: 0; padding: 15px; margin-top: 40px;">
 
-	<p class="footer-company-motto">BlogSpot.</p>
+  <p class="footer-company-motto">BlogSpot.</p>
 
-	<p class="footer-links">
-		<a href="{% url 'blog:home' %}" class="links">Home</a>
-		<!-- <a href="#info1" class="links">Features</a>
-		<a href="#faq"  class="links">FAQ's</a> -->
-		<a href="{% url 'blog:register' %}"  class="links">Register</a>
-	</p>
+  <p class="footer-links">
+    <a href="{% url 'blog:home' %}" class="links">Home</a>
+    <!-- <a href="#info1" class="links">Features</a>
+    <a href="#faq"  class="links">FAQ's</a> -->
+    <a href="{% url 'blog:register' %}"  class="links">Register</a>
+  </p>
 
-	<p class="footer-company-name">BlogSpot &copy; 2018</p>
+  <p class="footer-company-name">BlogSpot &copy; 2018</p>
 
   </footer>
 </div>

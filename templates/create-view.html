@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %} BlogSpot - Create Blog {% endblock %}
+
 {% block content %}
 {% if request.user.is_authenticated %}
 
@@ -53,12 +55,12 @@
     </header>
 
     <div class="container py-5">
-    	<form method=POST action=''>
-			{% csrf_token %}
-			{{form.as_p}}
-			<br>
-			<input type="submit" class="btn btn-success px-4" name="blog" value="Save">
-		</form>
+        <form method=POST action=''>
+            {% csrf_token %}
+            {{form.as_p}}
+            <br>
+            <input type="submit" class="btn btn-success px-4" name="blog" value="Save">
+        </form>
     </div>
     <footer class="footer-basic-centered py-4" style="bottom: 0;">
 
