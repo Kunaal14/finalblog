@@ -156,6 +156,7 @@ def post_model_create_view(request):
             context={
               "form":PostModelForm()
             }
+            return HttpResponseRedirect("/dashboard")
         template = "create-view.html"
         return render(request, template, context)
 
