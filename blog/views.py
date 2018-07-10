@@ -81,6 +81,7 @@ def user_blogs(request):
     query = request.GET.get("q", None)
 
     qs = MyUser.objects.all()
+    #print(qs.slug)
     if query is not None:
         qs = qs.filter(
                 Q(username__icontains=query) 
@@ -92,15 +93,19 @@ def user_blogs(request):
 
 
 def list_view(request, username):
-    try:
-        qs = Post.objects.filter(slug  = username)     
-        template = "list.html"
-        context = {
-            "object_list":qs
-        }
-        return render(request, template, context)
-    except:
-        return Http404("page not found")
+    #try:
+
+    qs = Post.objects.filter(slug  = username) 
+    print(qs) 
+    #get_object_or_404(Post, name=username) 
+    template = "list.html"
+    context = {
+        "object_list":qs
+    }
+    print(qs)
+    return render(request, template, context)
+    # except:
+    #     return Http404("page not found")
 
 
 def detail_view(request, user_id):

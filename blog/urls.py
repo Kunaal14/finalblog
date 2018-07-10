@@ -11,7 +11,7 @@ urlpatterns = [
 	path('login/', views.user_login, name='login'),
 	path('logout/', views.user_logout, name='logout'),
 	path('dashboard/', views.dashboard, name='dashboard'),
-	path('<slug:username>/', views.list_view, name='list'),
+	path('<username>/', views.list_view, name='list'),
 	path('dashboard/<int:user_id>/edit', views.post_model_update_view, name="update" ),
 
 	#path('dashboard/create/', views.formset_view, name='formset_view'),

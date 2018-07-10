@@ -3,5 +3,5 @@
 </form>
 {% for obj in qs %}
 <li>
-     <a href='{% url "blog:list" obj %}'>{{obj}}</a></li>
+     <a href='{% url "blog:list" obj.slug %}'>{{obj}}</a></li>
     {% endfor %}

@@ -75,7 +75,7 @@ class MyUser(AbstractBaseUser):
 
                                     )
     #name = models.CharField(max_length=100, null=True, blank=True)
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(max_length=100,null=True, blank=True)
     zip_code = models.CharField(max_length=120, default="1234")
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -102,17 +102,7 @@ class MyUser(AbstractBaseUser):
     def get_absolute_url(self):
         return reverse("blog:dashboard", kwargs={"slug": self.slug})
 
-# def pre_save_MyUser(sender, instance, *args, **kwargs):
-#     username = str(instance.username)
-#     slug = slugify(username)
-#     instance.slug = slug
-    
-#     name = username.lower()
-#     instance.username = name
-#     # instance.name = name
 
-
-# pre_save.connect(pre_save_MyUser, sender=MyUser)
     
 
 
@@ -122,7 +112,8 @@ class Post(models.Model):
                
     title = models.CharField(max_length=120)
     slug = models.SlugField(max_length=100, null=True, blank=True,)
-    #          
+    #  
+    name = models.CharField(max_length=100, null=True, blank=True)        
     
             
     # height_field = models.IntegerField(default=0)
@@ -151,36 +142,44 @@ class Post(models.Model):
     # class Meta:
     #     ordering = ["-timestamp", "-updated"]
     
-def post_save_user_model_reciever(sender, instance, created, *args, **kwargs):
+# def post_save_user_model_reciever(sender, instance, created, *args, **kwargs):
+#     if created:
+#         try:
+#             Profile.objects.create(user=instance)
+#             ActivationProfile.objects.create(user=instance) 
+#             # slug = slugify(instance.username)
+#             # instance.slug = slug
+#         except:
+#             pass
+# post_save.connect(post_save_user_model_reciever, sender=MyUser)
+
+# def save(self, *args, **kwargs):
+#         if not self.slug and self.user:
+#             self.slug = slugify(self.user)
+#         super(MyUser, self).save(*args, **kwargs)
+
+def pre_save_MyUser(sender, instance,created, *args, **kwargs):
+    slug = slugify(instance.user)
+    instance.slug = slug
     if created:
         try:
             Profile.objects.create(user=instance)
-
-
-           
-            
-            
-            
-
             ActivationProfile.objects.create(user=instance) 
-            
         except:
             pass
 
-
-
-post_save.connect(post_save_user_model_reciever, sender=MyUser)
-
-
-
-def pre_save_MyUser(sender, instance, *args, **kwargs):
-
-    slug = slugify(instance.user)
-    instance.slug = slug
-    
-    # name = str(instance.username)
-    # instance.name = name
-
-
 pre_save.connect(pre_save_MyUser, sender=Post)
     
+
+def pre_save_MyUser(sender, instance, *args, **kwargs):
+    #username = str(instance.username)
+    slug = slugify(instance.username)
+    instance.slug = slug
+pre_save.connect(pre_save_MyUser, sender=MyUser)
+
+
+def pre_save_Post(sender, instance, *args, **kwargs):
+    #username = str(instance.username)
+    slug = slugify(instance.user)
+    instance.slug = slug
+pre_save.connect(pre_save_Post, sender=Post)
