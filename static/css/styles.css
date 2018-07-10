@@ -1,0 +1,304 @@
+body {
+  color: #333;
+  overflow-x: hidden; 
+}
+
+.navbar {
+  background-color: whitesmoke; 
+}
+
+#home-section {
+  background: url("../img/main.jpeg") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: 95%;
+  min-height: 700px; 
+}
+  
+#home-section .home-inner {
+    padding-top: 150px; 
+}
+
+#home-section .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 700px; 
+}
+
+#newsletter {
+  background-color: #324B4E; 
+}
+
+#newsletter .fa-telegram-plane {
+    margin-right: 15px;
+    font-size: 21px; 
+}
+
+#start_blog {
+  background: url("../img/startBlog.jpg") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: 95%;
+  min-height: 300px;
+  position: relative; 
+}
+
+#start_blog .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+}
+
+#start_blog .home-blog {
+    padding-top: 30px; 
+}
+
+#info1 {
+  background-color: #348791;
+  height: 100vh; 
+}
+
+#info1 .info-left {
+    top: 130px; 
+}
+
+#info1 .info-right {
+    top: 200px; 
+}
+
+#info2 {
+  background-color: #00C89B;
+  height: 100vh; 
+}
+
+#info2 .info-left {
+    top: 130px; 
+}
+
+#info2 .info-right {
+    top: 200px; }
+
+#info3 {
+  background-color: #A8719C;
+  height: 100vh; }
+  #info3 .info-left {
+    top: 130px; }
+  #info3 .info-right {
+    top: 200px; }
+
+#info4 {
+  background-color: #f7ae39;
+  height: 100vh; }
+  #info4 .info-left {
+    top: 130px; }
+  #info4 .info-right {
+    top: 200px; }
+
+#tutorials {
+  background-color: #FF6F91; }
+  #tutorials .card {
+    background-color: #FF6F91;
+    border-color: #FF6F91; }
+  #tutorials .fa-slack-hash {
+    font-size: 80px;
+    color: #333;
+    margin-bottom: 20px; }
+  #tutorials .fa-comments {
+    font-size: 80px;
+    color: #333;
+    margin-bottom: 20px; }
+  #tutorials .fa-cloud-upload-alt {
+    font-size: 80px;
+    color: #333;
+    margin-bottom: 20px; }
+
+#make_difference {
+  background: url("../img/ready.jpg") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: 50%;
+  min-height: 300px;
+  position: relative; }
+  #make_difference .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  #make_difference .home-blog {
+    padding-top: 30px; }
+
+.carousel-item {
+  height: 450px;
+  height: 100vh; }
+
+.carousel-image-1 {
+  background: url("../img/connect.jpeg");
+  background-size: cover;
+  background-position-y: 40%;
+  position: relative; }
+  .carousel-image-1 .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .carousel-image-1 .carousel-caption {
+    margin-bottom: 160px; }
+
+.carousel-image-2 {
+  background: url("../img/add_image.jpeg");
+  background-size: cover;
+  background-position-y: 70%; }
+  .carousel-image-2 .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .carousel-image-2 .carousel-caption {
+    margin-bottom: 100px; }
+
+.carousel-image-3 {
+  background: url("../img/difference.jpg");
+  background-size: cover;
+  background-position-y: 90%; }
+  .carousel-image-3 .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .carousel-image-3 .carousel-caption {
+    margin-bottom: 150px; }
+
+#faq {
+  background-color: #DB6445; }
+  #faq .card {
+    width: 90;
+    margin: auto;
+    border: #B9A89A; }
+  #faq .card-header {
+    background-color: #f3a996; }
+
+.footer-basic-centered {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font: normal 18px sans-serif;
+  padding: 45px; }
+  .footer-basic-centered .footer-company-motto {
+    color: #8d9093;
+    font-size: 24px;
+    margin: 0; }
+  .footer-basic-centered .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0; }
+  .footer-basic-centered .footer-links {
+    list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 35px 0 23px;
+    margin: 0; }
+    .footer-basic-centered .footer-links .links {
+      padding-left: 30px; }
+  .footer-basic-centered .footer-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit; }
+
+html, body {
+  height: 100%; }
+
+.sidebar {
+  height: 100%;
+  width: 20%;
+  color: black;
+  position: fixed !important;
+  z-index: 1;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  overflow: auto; }
+
+h3.bar-item {
+  font-size: 30px; }
+
+.barbutton {
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  white-space: nowrap; }
+
+.selected {
+  background-color: #2980b9;
+  color: White; }
+
+.barbutton:hover,
+.barbutton:active {
+  text-decoration: none;
+  background-color: #2980b9;
+  color: White; }
+
+.barbutton {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.bar-block .bar-item {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  white-space: normal;
+  float: none;
+  outline: 0; }
+
+.contain {
+  margin-left: 20% !important;
+  height: 100%;
+  background: #ecf0f1; }
+  .contain .heading {
+    font-size: 45px;
+    color: black; }
+  .contain .content {
+    font-size: 18px; }
+    .contain .content h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .contain .content button {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+
+/* If you don't want the footer to be responsive, remove these media queries */
+@media (max-width: 600px) {
+  .footer-basic-centered {
+    padding: 35px; }
+  .footer-basic-centered .footer-company-motto {
+    font-size: 18px; }
+  .footer-basic-centered .footer-company-name {
+    font-size: 12px; }
+  .footer-basic-centered .footer-links {
+    font-size: 14px;
+    padding: 25px 0 20px; }
+  .footer-basic-centered .footer-links a {
+    line-height: 1.8; } }

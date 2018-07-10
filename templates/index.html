@@ -1,0 +1,515 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Blog Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/bootstrap.css' %}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!--Minified javascript file for ScrollReveal-->
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <!--jQuery for smooth scrolling-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://s3.amazonaws.com/myadvobuck/static/libs/typed.min.js"></script>
+</head>
+  <body id="home">
+  <!--NavBar-->
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top">
+        <div class="container">
+            <a href='{% url "blog:user_blogs" %}'> bloglist</a>
+
+        <a class="navbar-brand" href="{% url 'blog:home' %}"><span class="logo">BlogSpot</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="{% url 'blog:home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#info1">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#faq">FAQ's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'blog:register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'blog:login' %}">Login</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+  </nav>
+
+ <!--Header Section-->
+  <header id="home-section"> 
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="text-center text-white display-3">We the <span class="typed"></span></h1>
+              <p class="lead text-center">Create unique and beautiful <span class="subtyped"></span></p>
+              <div class="col-sm-12 text-center py-3">
+                <a href="{% url 'blog:login' %}"><button class="btn btn-outline-warning btn-lg">Create New Blog</button></a>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+   <!--Newsletter Section-->
+   <!-- <section id="newsletter" class="text-white py-5">
+    <div class="container">
+        <h3 class="text-center text-white mb-2">Every month we'll send you exclusive blogging tips</h3>
+        <h4 class="text-center text-muted mb-4">Join our Community</h4>
+      <div class="row">
+        <div class="col-md-4">
+            <input type="text" class="form-control form-control-md" id="exampleInput" placeholder="UserName">
+        </div>
+
+        <div class="col-md-4">
+            <input type="email" class="form-control form-control-md" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success btn-md btn-block"><i class="fab fa-telegram-plane"></i>Subscribe</button>
+        </div>
+
+      </div> 
+    </div>
+  </section> -->
+
+     <!--Start Blog Today Section-->
+     <section id="start_blog" class="text-white py-5">
+        <div class="dark-overlay">
+            <div class="home-blog">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <h1 class="text-center text-white display-3 py-3">Start Blogging Now</h1>
+                    <div class="col-sm-12 text-center py-3">
+                      <a href="{% url 'blog:login' %}"><button class="btn btn-outline-warning btn-lg">Create New Blog</button></a>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+  <!--Feature Section-->
+<section id="info1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 info-left">
+            <img class="rounded-circle img-fluid" src="{% static 'img/easyLogin.png' %}" alt="Image to be added">
+        </div>
+  
+        <div class="col-md-6 col-sm-6 info-right">
+          <div class="text-white align-self-center">
+            <h2>Easy Login</h2>
+            <p class="pt-4 lead">You can login easily and securely using <b>Google</b> and <b>Facebook</b> accounts. Do'nt think, just login. </p>
+            <br>
+          </div>
+        </div>
+      </div> 
+    </div>
+</section>
+  <!--Feature Section-->
+
+<section id="info2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 info-right">
+          <div class=" text-white align-self-center">
+            <h2>Get your own personalized domain</h2>
+            <p class="pt-4 lead"> You get a personalized web presence to prove the world that you are who you say you are. Be yourself - Do'nt Compromise</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6  info-left">
+            <img class="rounded-circle img-fluid" src="{% static 'img/getDomain.png' %}" alt="Image to be added">
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <!--Feature Section-->
+
+<section id="info3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 info-left">
+            <img class="rounded-circle img-fluid" src="{% static 'img/blog_manage.png' %}" alt="Image to be added">
+        </div>
+  
+        <div class="col-md-6 col-sm-6 info-right">
+          <div class="info-right text-white align-self-center">
+            <h2>Simple Blog Manager</h2>
+            <p class="pt-4 lead">There is nothing more easier and simpler than our blog manager. You can <b>Write</b>, <b>Edit</b> and <b>Manage</b> your blogs from your desktop. Sharing your ideas, passion and thoughts with the world is just a click away. </p>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <!--Feature Section-->
+
+<section id="info4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 info-right">
+          <div class="text-white align-self-center">
+            <h2>Share Your Ideas With The World</h2>
+            <p class="pt-4 lead">No matter what people tell you, words and ideas can change the world. Express yourself and share your passion.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 info-left">
+            <img class="rounded-circle img-fluid" src="{% static 'img/Share.png' %}" alt="Image to be added">
+        </div>
+      </div> 
+    </div>
+  </section>
+
+    <!--make a Difference Section-->
+<section id="make_difference" class="text-white py-5">
+    <div class="dark-overlay">
+      <div class="home-blog">
+        <div class="container">
+         <div class="row">
+          <div class="col">
+            <h1 class="text-center text-white display-3 py-3">Let's Get Started</h1>
+            <div class="col-sm-12 text-center py-3">
+             <a href="{% url 'blog:login' %}"><button class="btn btn-outline-warning btn-lg">Create New Blog</button></a>
+            </div>
+          </div>
+        </div>
+     </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+  <!--Feature Cards Section-->
+  <section id="tutorials" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <div class="card text-center">
+            <div class="card-body text-white">
+              <h1><i class="fab fa-slack-hash"></i></h1>
+              <h6 class="card-subtitle mb-2">Hashtags and Categories</h6>
+              <p class="card-text">Use hashtags for different categories to make your blog more discoverable</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="card text-center">
+              <div class="card-body text-white">
+                <h1><i class="fas fa-comments"></i></h1>
+                <h6 class="card-subtitle mb-2">Likes and Comments</h6>
+                <p class="card-text">Know what your audience wants from there feedback comments.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 text-center">
+              <div class="card text-center">
+                <div class="card-body text-white">
+                  <h1><i class="fas fa-cloud-upload-alt"></i></h1>
+                  <h6 class="card-subtitle mb-2">Save your memories on cloud</h6>
+                  <p class="card-text">Save moments that matter. Save it on cloud and get it anytime, anywhere.</p>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+ </section>
+  
+ <!--Slides-->
+ <section id="showcase">
+    
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+     <ol class="carousel-indicators">
+       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+       <li data-target="#myCarousel" data-slide-to="1"></li>
+       <li data-target="#myCarousel" data-slide-to="2"></li>
+     </ol>
+     
+     <div class="carousel-inner">
+        
+       <div class="carousel-item carousel-image-1 active">
+          <div class="dark-overlay">        
+            <div class="container">
+              <div class="carousel-caption d-none d-sm-block text-center">
+                <h1 class="display-4">Connect With Like Minded People</h1>
+                <p class="lead pt-4">Enjoy self growth by getting in touch with like minded people</p>
+              </div>
+            </div> 
+          </div>
+
+       </div>
+
+       <div class="carousel-item carousel-image-2">
+        <div class="dark-overlay">
+            <div class="container">
+                <div class="carousel-caption d-none d-sm-block text-center">
+                  <h1 class="display-4">Add Images To Give a Personal Touch</h1>
+                  <p class="lead pt-4">Make your blogs more attractive by customizing with images you like.</p>
+                </div>
+              </div>
+        </div>  
+
+        </div>
+
+        <div class="carousel-item carousel-image-3">
+          <div class="dark-overlay">          
+            <div class="container">
+              <div class="carousel-caption d-none d-sm-block text-center">
+                <h1 class="display-4">Make a Difference</h1>
+                <p class="lead pt-4">Help others stay updated by your blogs.</p>
+              </div>
+            </div>
+          </div>  
+
+          </div>
+        </div>
+
+        <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+   </div>
+ </section>
+
+ <!--FAQ's-->
+  <section id="faq" class="p-5 text-center">
+    <div class="container">
+      <h1 class="text-center text-white pb-5">Frequently Asked Questions</h1>
+      <div class="row">
+      <div class="col-md-6">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <a  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Question 1
+                    </a>
+                  </h5>
+                </div>
+            
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <a  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Question 2
+                      </a>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h5 class="mb-0">
+                        <a  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                          Question 3
+                        </a>
+                      </h5>
+                    </div>
+                
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                      </div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+          <div id="accordion">
+              <div class="card">
+                  <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                      <a  data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        Question 4
+                      </a>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                      <h5 class="mb-0">
+                        <a  data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                          Question 5
+                        </a>
+                      </h5>
+                    </div>
+                
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="card">
+                      <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                          <a  data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                            Question 6
+                          </a>
+                        </h5>
+                      </div>
+                  
+                      <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                        <div class="card-body">
+                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                        </div>
+                      </div>
+                    </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--Footer-->
+
+  <footer class="footer-basic-centered">
+
+			<p class="footer-company-motto">BlogSpot.</p>
+
+			<p class="footer-links">
+				<a href="{% url 'blog:home' %}" class="links">Home</a>
+				<a href="#info1" class="links">Features</a>
+				<a href="#faq"  class="links">FAQ's</a>
+				<a href="{% url 'blog:register' %}"  class="links">Register</a>
+			</p>
+
+			<p class="footer-company-name">BlogSpot &copy; 2018</p>
+
+		</footer>
+
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+
+
+
+
+<script>
+$(function(){
+	$(".typed").typed({
+		strings: ["Developers.", "Designers.", "People."],
+		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+		stringsElement: null,
+		// typing speed
+		typeSpeed: 30,
+		// time before typing starts
+		startDelay: 1200,
+		// backspacing speed
+		backSpeed: 20,
+		// time before backspacing
+		backDelay: 500,
+		// loop
+		loop: true,
+		// false = infinite
+		loopCount: 5,
+		// show cursor
+		showCursor: false,
+		// character for cursor
+		cursorChar: "|",
+		// attribute to type (null == text)
+		attr: null,
+		// either html or text
+		contentType: 'html',
+		// call when done callback function
+		callback: function() {},
+		// starting callback function before each string
+		preStringTyped: function() {},
+		//callback for every typed string
+		onStringTyped: function() {},
+		// callback for reset
+		resetCallback: function() {}
+	});
+});
+
+$(function(){
+	$(".subtyped").typed({
+		strings: ["Developers.", "Designers.", "People."],
+		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+		stringsElement: null,
+		// typing speed
+		typeSpeed: 30,
+		// time before typing starts
+		startDelay: 1200,
+		// backspacing speed
+		backSpeed: 20,
+		// time before backspacing
+		backDelay: 500,
+		// loop
+		loop: true,
+		// false = infinite
+		loopCount: 5,
+		// show cursor
+		showCursor: false,
+		// character for cursor
+		cursorChar: "|",
+		// attribute to type (null == text)
+		attr: null,
+		// either html or text
+		contentType: 'html',
+		// call when done callback function
+		callback: function() {},
+		// starting callback function before each string
+		preStringTyped: function() {},
+		//callback for every typed string
+		onStringTyped: function() {},
+		// callback for reset
+		resetCallback: function() {}
+	});
+});
+</script>
+</html>

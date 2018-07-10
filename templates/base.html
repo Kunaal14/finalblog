@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Blog Site</title>
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Noto+Serif|Roboto:400,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/bootstrap.css' %}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!--Minified javascript file for ScrollReveal-->
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <!--jQuery for smooth scrolling-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://s3.amazonaws.com/myadvobuck/static/libs/typed.min.js"></script>
+  <style>
+    {% block styles %}
+
+    {% endblock %}
+  </style>
+</head>
+<body style="height: 100%">
+	{% block content %}
+	{% endblock %}
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        {% block jquery %}
+        {% endblock %}
+    })
+    </script>
+
+</body>
+</html>

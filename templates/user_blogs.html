@@ -1,0 +1,7 @@
+<form action="/list" >
+  <input type="text" name="q" placeholder="SEARCH">
+</form>
+{% for obj in qs %}
+<li>
+     <a href='{% url "blog:list" obj %}'>{{obj}}</a></li>
+    {% endfor %}

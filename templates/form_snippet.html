@@ -1,0 +1,12 @@
+
+{% if form %}
+<form method='{% if method %}{{ method }}{% else %}POST{% endif %}' action='{% if action %}{{ action }}{% endif %}'>{% csrf_token %}
+  {% if as_p %}
+      {{ form.as_p }}
+    {% else %}
+      {{ form.as_ul }}
+    {% endif %}
+      <input type='submit' value='Submit' />
+</form>
+
+{% endif %}
