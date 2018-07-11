@@ -22,14 +22,14 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown mr-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="{% url 'blog:dashboard' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-user"></i> Welcome {{ request.user.username }}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">
                             <i class="fa fa-user-circle"></i> Profile
                         </a>
-                    </div>
+                    </div> -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog:logout' %}">
@@ -53,21 +53,19 @@
             </div>
         </div>
     </header>
-
+    <div style="background: #7bed9f">
+        <div class="container" id="hideMe">
+              {% if messages %}
+                
+                  {% for message in messages %}
+                      <h5 {% if message.tags %} class="{{ message.tags }} m-0 py-2 text-white"{% endif %}>{{ message }}</h5>
+                  {% endfor %}
+                
+              {% endif %}
+        </div>
+    </div>          
     <section class="py-4 mb-4 bg-light">
         <div class="container">
-            {% if messages %}
-              <div class="row">
-            	<div class="col-lg-2"></div>
-				<div class="messages col-lg-8">
-		    	{% for message in messages %}
-		    		<p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-		   		{% endfor %}
-				</div>
-			  </div>
-			  <br>
-			{% endif %}
-
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-2">

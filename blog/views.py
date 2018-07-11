@@ -121,7 +121,7 @@ def post_model_delete_view(request, user_id):
     obj = get_object_or_404(Post, id=user_id)
     if request.method == "POST":
         obj.delete()
-        messages.success(request, "POST DELETED")
+        messages.success(request, "Post Delete")
         return HttpResponseRedirect("/dashboard/")
     template = "blog_confirm_delete.html"
     context = {
@@ -157,7 +157,7 @@ def post_model_create_view(request):
             obj.user = request.user
             print(obj.title)
             obj.save()
-            messages.success(request, "Created a new blog")
+            messages.success(request, "New blog created")
             context={
               "form":PostModelForm()
             }
@@ -177,7 +177,7 @@ def post_model_update_view(request, user_id):
         obj = form.save(commit=False)
         print(obj.title)
         obj.save()
-        messages.success(request, "updated blog")
+        messages.success(request, "Blog updated")
         context={
             "form":PostModelForm()#request.POST or None
         }
